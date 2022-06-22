@@ -21,6 +21,9 @@ return function (ContainerBuilder $containerBuilder) {
                     'path' => isset($_ENV['docker']) ? 'php://stdout' : __DIR__ . '/../logs/app.log',
                     'level' => Logger::DEBUG,
                 ],
+                'unsplashApplicationId' => $_ENV['UNSPLASH_APPLICATION_ID'] ?? null,
+                'unsplashSecret' => $_ENV['UNSPLASH_SECRET'] ?? null,
+                'unsplashUtmSource' => $_ENV['UNSPLASH_UTM_SOURCE']
             ]);
         }
     ]);

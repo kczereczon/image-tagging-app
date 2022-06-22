@@ -20,6 +20,9 @@ $containerBuilder = new ContainerBuilder();
 //	$containerBuilder->enableCompilation(__DIR__ . '/../var/cache');
 //}
 
+$dotenv = Dotenv\Dotenv::createImmutable(__DIR__ . '/..');
+$dotenv->safeLoad();
+
 // Set up settings
 $settings = require __DIR__ . '/../app/settings.php';
 $settings($containerBuilder);

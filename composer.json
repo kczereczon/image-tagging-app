@@ -1,10 +1,10 @@
 {
-    "name": "slim/slim-skeleton",
-    "description": "A Slim Framework skeleton application for rapid development",
+    "name": "kczereczon/image-tagging-app",
+    "description": "App created for creating image dataset",
     "keywords": [
-        "microframework",
-        "rest",
-        "router",
+        "unspash",
+        "dataset",
+        "tagging",
         "psr7"
     ],
     "homepage": "http://github.com/slimphp/Slim-Skeleton",
@@ -29,7 +29,8 @@
         "slim/psr7": "^1.5",
         "slim/slim": "^4.10",
         "slim/twig-view": "^3.3",
-        "unsplash/unsplash": "^3.2"
+        "unsplash/unsplash": "^3.2",
+        "vlucas/phpdotenv": "^5.4"
     },
     "require-dev": {
         "jangregor/phpstan-prophecy": "^1.0.0",
