@@ -9,8 +9,12 @@ use Slim\Exception\HttpBadRequestException;
 
 class ViewImageAction extends ImageAction
 {
+
     /**
+     * @throws \Twig\Error\SyntaxError
      * @throws QueryMissingException
+     * @throws \Twig\Error\RuntimeError
+     * @throws \Twig\Error\LoaderError
      */
     protected function action(): Response
     {
@@ -21,6 +25,6 @@ class ViewImageAction extends ImageAction
         }
 
         $image = $this->imageRepository->getImage($query);
-        return $this->render('test.html', ['imageUrl' => $image->getUrl(), 'query' => $query]);
+        return $this->render('test.twig', ['imageUrl' => $image->getUrl(), 'query' => $query]);
     }
 }

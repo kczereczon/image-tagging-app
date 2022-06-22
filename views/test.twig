@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{{query}} - fit</title>
+    <style>
+        .parent {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            grid-template-rows: repeat(5, 1fr);
+            width: 100vw;
+            height: 100vh;
+        }
+
+        .div1 {
+            grid-area: 2 / 2 / 4 / 5;
+            display: flex;
+            justify-content: center;
+        }
+
+        .div2 {
+            grid-area: 4 / 2 / 5 / 5;
+            display: flex;
+            justify-content: center
+        }
+
+        .div3 {
+            grid-area: 1 / 2 / 2 / 5;
+            display: flex;
+            justify-content: center
+        }
+    </style>
+</head>
+<body>
+<div class="parent">
+    <div class="div3">
+        <h1>{{query}}</h1>
+    </div>
+    <div class="div1">
+
+        <img height="100%" src="{{imageUrl}}" alt="">
+    </div>
+    <div class="div2">
+        <div><input type="range" id="fit" name="fit"
+                    min="0" max="100" value="0" step="5">
+            <label for="fit">Fit</label></div>
+    </div>
+</div>
+
+</body>
+</html>
