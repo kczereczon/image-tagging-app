@@ -30,7 +30,8 @@
         "slim/slim": "^4.10",
         "slim/twig-view": "^3.3",
         "unsplash/unsplash": "^3.2",
-        "vlucas/phpdotenv": "^5.4"
+        "vlucas/phpdotenv": "^5.4",
+        "ext-exif": "*"
     },
     "require-dev": {
         "jangregor/phpstan-prophecy": "^1.0.0",

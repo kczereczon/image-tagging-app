@@ -33,12 +33,15 @@ class UnsplashImageRepository extends ImageRepository
 
     public function saveImage(Image $image)
     {
+        $fileName = __DIR__ . '/../../../../output/photos/' . $image->getId();
+
         file_put_contents(
-            __DIR__ . '/../../../../output/photos/' . $image->getId() . pathinfo(
-                $image->getId(),
-                PATHINFO_EXTENSION
-            ),
+            $fileName,
             file_get_contents($image->getUrl())
         );
+
+        $ext = \exif_imagetype($fileName) == IMAGETYPE_JPEG ? 'jpg' : 'png';
+
+        rename($fileName, $fileName . '.' . $ext);
     }
 }

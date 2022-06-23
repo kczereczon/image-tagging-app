@@ -18,7 +18,7 @@ abstract class ImageRepository
         $file = __DIR__ . '/../../../output/dataset.csv';
         $handle = fopen($file, 'a');
 
-        $line = $image->jsonSerialize();
+        $line = array_merge($image->jsonSerialize(), ['confidence' => $confidence, 'label' => $label]);
         fputcsv($handle, $line);
 
         fclose($handle);
