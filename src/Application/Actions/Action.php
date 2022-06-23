@@ -84,6 +84,13 @@ abstract class Action
         return $this->respond($payload);
     }
 
+    protected function redirect($url): Response
+    {
+        return $this->response
+            ->withStatus(302)
+            ->withHeader('Location', $url);
+    }
+
     protected function respond(ActionPayload $payload): Response
     {
         $json = json_encode($payload, JSON_PRETTY_PRINT);

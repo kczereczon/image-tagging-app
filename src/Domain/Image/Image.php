@@ -33,6 +33,11 @@ class Image implements \JsonSerializable
         return $this->url;
     }
 
+    public function getExtension(): string
+    {
+        return pathinfo($this->url, PATHINFO_EXTENSION);
+    }
+
     public function jsonSerialize(): array
     {
         return [

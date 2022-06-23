@@ -16,6 +16,7 @@ return function (App $app) {
     });
 
     $app->get('/image', \App\Application\Actions\Image\ViewImageAction::class);
+    $app->post('/image/save', \App\Application\Actions\Image\TagImageAction::class);
 
     $app->group('/users', function (Group $group) {
         $group->get('', ListUsersAction::class);

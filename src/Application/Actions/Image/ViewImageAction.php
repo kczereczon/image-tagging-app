@@ -25,6 +25,10 @@ class ViewImageAction extends ImageAction
         }
 
         $image = $this->imageRepository->getImage($query);
-        return $this->render('test.twig', ['imageUrl' => $image->getUrl(), 'query' => $query]);
+        return $this->render('test.twig', [
+            'imageUrl' => $image->getUrl(),
+            'imageId' => $image->getId(),
+            'query' => $query
+        ]);
     }
 }

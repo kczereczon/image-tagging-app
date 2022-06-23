@@ -5,7 +5,7 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>{{query}} - fit</title>
+    <title>{{ query }} - fit</title>
     <style>
         .parent {
             display: grid;
@@ -37,16 +37,20 @@
 <body>
 <div class="parent">
     <div class="div3">
-        <h1>{{query}}</h1>
+        <h1>{{ query }}</h1>
     </div>
     <div class="div1">
-
-        <img height="100%" src="{{imageUrl}}" alt="">
+        <img height="100%" src="{{ imageUrl }}" alt="">
     </div>
     <div class="div2">
-        <div><input type="range" id="fit" name="fit"
-                    min="0" max="100" value="0" step="5">
-            <label for="fit">Fit</label></div>
+        <div>
+            <form action="/image/save" method="post">
+                <input type="hidden" name="url" hidden value="{{ imageUrl }}">
+                <input type="hidden" name="label" hidden value="{{ query }}">
+                <input type="hidden" name="id" hidden value="{{ imageId }}">
+                <button>Save</button>
+            </form>
+        </div>
     </div>
 </div>
 

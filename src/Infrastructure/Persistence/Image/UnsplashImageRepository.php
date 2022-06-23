@@ -8,7 +8,7 @@ use App\Domain\Image\ImageRepository;
 use Unsplash\HttpClient;
 use Unsplash\Photo;
 
-class UnsplashImageRepository implements ImageRepository
+class UnsplashImageRepository extends ImageRepository
 {
     public function __construct(SettingsInterface $settings)
     {
@@ -29,5 +29,16 @@ class UnsplashImageRepository implements ImageRepository
 
 
         return new Image((string)$randomPhoto['id'], (string)$randomPhoto['urls']['full']);
+    }
+
+    public function saveImage(Image $image)
+    {
+        file_put_contents(
+            __DIR__ . '/../../../../output/photos/' . $image->getId() . pathinfo(
+                $image->getId(),
+                PATHINFO_EXTENSION
+            ),
+            file_get_contents($image->getUrl())
+        );
     }
 }
